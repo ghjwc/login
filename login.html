@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .container {
+        background-color: lightcyan;
+        width: 35%;
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 5px;
+        grid-template-areas: 
+        "id btn"
+        "pw btn";
+    }
+    .id {
+        grid-area: id;
+        padding: 10%;
+    }
+    .pw {
+        grid-area: pw;
+        padding: 10%;
+
+    }
+    .btn {
+        grid-area: btn;
+        padding: 10%;
+
+        }
+    .id input {
+        width: 100px;
+        height: 25px;
+    }
+    .pw input {
+        width: 100px;
+        height: 25px;
+    }
+    .btn input {
+        width: 100px;
+        height: 100px;
+        background-color:darkcyan;
+        border: none;
+        color: white;
+    }
+
+    .login1 {
+        padding: 3%;
+        width: 150px;
+        border: 2px dashed grey;
+        text-align: center;
+    }
+
+    .id1 input {
+        width: 100px;
+        height: 30px;
+        border: none;
+        margin: 5px;
+        background-color: lightblue;
+    }
+    .pw1 input {
+        width: 100px;
+        height: 30px;
+        border: none;
+        margin: 5px;
+        background-color: lightblue;
+    }
+    .btn1 button {
+        width: 105px;
+        height: 30px;
+        background-color: rgb(86, 99, 214);
+        border: none;
+        color: lightblue;
+        margin: 5px;
+    }
+
+
+</style>
+
+<body>
+
+    <form action="login.php" method="post">
+        <div class="container">
+            <div class="id">
+                <label for="name"></label>
+                <input name="id" type="text" placeholder="id" autofocus required>
+            </div>
+
+            <div class="pw">
+                <label for="name"></label>
+                <input name="pw" type="password" placeholder="password" required>
+                </div>
+
+            <div class="btn">
+                <input type="submit" value="login">
+            </div>
+        </div>
+    </form>
+
+    <p id="time"></p>
+    <p id="date"></p>
+
+    <br><br><br>
+    <div class="login1">
+    <div class="id1">
+        <label for="name"></label>
+        <input name="id" type="text" placeholder="id" autofocus required>
+    </div>
+    <div class="pw1">
+        <label for="name"></label>
+        <input name="pw" type="password" placeholder="password" required>
+        </div>
+        <input type="checkbox" name="check">
+        <label for="check">remember me</label>
+        <div class="btn1">
+            <button onclick="login()" value="login">
+        <div class="btn1">
+        <a href="./signup.html"><button onclick="login()" value="sign up"></a>
+        </div>
+    </div>
+        
+</body>
+</html>
+
+<script type="text/javascript">
+    // 화면이 로드되고 나서 실행할 수 있다.
+    window.onload = function() {
+        // 1초마다 반복하겠다.
+        setInterval(setClock , 1000);
+        setClock();
+    };
+
+    // alert("환영합니다.");
+    console.log('반갑습니다.');
+//     로그인은 DB에 저장된 id pw를 비교해서 맞으면
+        // 웹 서버에 세션을 부여해서 로그인 유지
+        // 지금은 로그인 버튼 눌렀을 때 id pw를 js에 출력
+    // function login() {
+    //     // querySelector는 html과 소통하는 길
+    //     var id = document.querySelector("input[name='id']").value;
+    //     var pw = document.querySelector("input[name='pw']").value;
+    //     document.getElementById("id");
+    //     document.getElementsByTagName
+
+    //     alert("환영합니다!");
+
+    //     location.href = "todo.html";
+    // }
+
+    function setClock() {
+        var date = new Date();
+
+        var time = date.getHours() + "시" + date.getMinutes() + "분" + date.getSeconds() + "초"
+        var ymd = date.getFullYear() + "년" + date.getMonth() + "월" + date.getDay() + "일";
+    
+        document.getElementById("date").innerHTML = ymd;
+        document.getElementById("time").innerHTML = time;
+    }
+
+</script>
