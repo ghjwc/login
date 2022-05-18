@@ -1,5 +1,8 @@
 <?php
-$host = 'localhost';
+
+    session_start();
+
+    $host = 'localhost';
     $user = 'root';
     $db = 'hyosung3';
     
